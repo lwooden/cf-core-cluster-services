@@ -1,6 +1,7 @@
-alloy:
+cf-alloy:
   enabled: true
 
+alloy:
   alloy:
     mounts:
       # -- Mount /var/log from the host into the container for log collection.

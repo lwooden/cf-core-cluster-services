@@ -2,8 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-loki:
+cf-loki:
   enabled: true
+loki:
   deploymentMode: SingleBinary
   write:
     replicas: 0

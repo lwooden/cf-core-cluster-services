@@ -8,4 +8,4 @@ dependencies:
   - name: alloy
     version: 0.7.0
     repository: https://grafana.github.io/helm-charts
-    condition: alloy.enabled
+    condition: cf-alloy.enabled

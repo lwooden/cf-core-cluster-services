@@ -2,8 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-kube-prometheus-stack:
+cf-kube-prometheus-stack:
   enabled: true
+
+kube-prometheus-stack:
   grafana:
     sidecar:
       datasources:

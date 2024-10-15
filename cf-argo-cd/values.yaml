@@ -1,2 +1,24 @@
-argo-cd:
+cf-argo-cd:
   enabled: true
+
+argo-cd:
+  global:
+    domain: argocd.lowsandbox.com
+  configs:
+    params:
+      server.insecure: true
+  server:
+    ingress:
+      enabled: true
+      controller: generic
+      ingressClassName: nginx
+      pathType: Prefix
+      path: /
+      annotations:
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+      extraTls:
+        - hosts:
+            - argocd.lowsandbox.com
+          # Based on the ingress controller used secret might be optional
+          secretName: lowsandbox-tls
