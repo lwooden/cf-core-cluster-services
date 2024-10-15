@@ -8,4 +8,4 @@ dependencies:
   - name: loki
     version: 6.12.0
     repository: https://grafana.github.io/helm-charts
-    condition: loki.enabled
+    condition: cf-loki.enabled
