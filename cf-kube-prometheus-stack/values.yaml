@@ -36,7 +36,7 @@ kube-prometheus-stack:
       tls:
         - secretName: "lowsandbox-tls"
     # TODO - try additional Datasources out
-    additionalDatasources:
+    additionalDataSources:
       - name: "Loki"
         type: loki
         uid: loki
