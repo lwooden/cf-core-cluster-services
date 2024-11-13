@@ -16,6 +16,10 @@ kubernetes-dashboard:
       tls:
         enabled: true
         secretName: "lowsandbox-tls"
+  web:
+    tag: "1.6.0"
+  api:
+    tag: "1.10.1"
 
 replicaCount: 1
 
