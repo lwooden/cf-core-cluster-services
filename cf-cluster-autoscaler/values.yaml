@@ -8,3 +8,15 @@ cluster-autoscaler:
     clusterName: lowk8
   tags:
     - k8s.io/cluster-autoscaler/enabled
+  rbac:
+    serviceAccount:
+      create: false
+      name: clusterautoscaler
+      annotations:
+        "eks.amazonaws.com/role-arn": arn:aws:iam::726728011995:role/ClusterAutoScalerRole
+  extraArgs:
+    skip-nodes-with-local-storage: true
+    expander: least-waste
+    balance-similar-node-groups: true
+    skip-nodes-with-system-pods: true
+    aws-use-static-instance-list: true
