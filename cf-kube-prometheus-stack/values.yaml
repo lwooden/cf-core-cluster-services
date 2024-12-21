@@ -24,7 +24,7 @@ kube-prometheus-stack:
         uid: prometheus
     persistence:
       # persistence for Grafana data /var/lib/grafana
-      enabled: true
+      enabled: false
       existingClaim: ebs-claim
     ingress:
       enabled: true
