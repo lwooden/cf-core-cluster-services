@@ -5,6 +5,8 @@
 cf-loki:
   enabled: true
 loki:
+  image:
+    tag: 3.4.2
   deploymentMode: SingleBinary
   write:
     replicas: 0
