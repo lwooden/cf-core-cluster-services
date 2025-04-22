@@ -17,9 +17,9 @@ kubernetes-dashboard:
         enabled: true
         secretName: "lowsandbox-tls"
   web:
-    tag: "1.6.0"
+    tag: "1.6.2"
   api:
-    tag: "1.10.1"
+    tag: "1.12.0"
 
 replicaCount: 1
 
