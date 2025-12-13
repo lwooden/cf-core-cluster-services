@@ -1,7 +1,11 @@
 cf-ingress-haproxy:
-  enabled: false
+  enabled: true
 kubernetes-ingress:
   controller:
+    image:
+      repository: haproxytech/kubernetes-ingress
+      tag: v1.46.1
+    kind: Deployment # consider using DaemonSet for better performance
     ingressClassName: haproxy
     logging:
       traffic:
@@ -10,7 +14,7 @@ kubernetes-ingress:
         facility: "daemon"
     service:
       type: LoadBalancer
-      enablePorts:
+      enablePorts: # disable ports that are not needed and may not be supported in TS
         quic: false
         admin: false
         stat: false
