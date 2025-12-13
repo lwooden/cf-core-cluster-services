@@ -1,0 +1,20 @@
+cf-ingress-haproxy:
+  enabled: false
+kubernetes-ingress:
+  controller:
+    ingressClassName: haproxy
+    logging:
+      traffic:
+        address: "stdout"
+        format: "raw"
+        facility: "daemon"
+    service:
+      type: LoadBalancer
+      enablePorts:
+        quic: false
+        admin: false
+        stat: false
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+        service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
