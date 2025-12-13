@@ -1,0 +1,6 @@
+dependencies:
+- name: contour
+  repository: https://projectcontour.github.io/helm-charts
+  version: 0.2.0
+digest: sha256:fee811fb8f43d5b86e3ad8823caef6d2f771d03e38238eb898a0722c4bf2a071
+generated: "2025-12-06T18:52:54.403058-05:00"
