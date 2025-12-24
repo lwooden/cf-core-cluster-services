@@ -8,13 +8,13 @@ cf-kube-prometheus-stack:
 kube-prometheus-stack:
   grafana:
     image:
-      tag: "11.6.0"
+      tag: "12.3.0"
     grafana.ini:
       smtp:
         enabled: true
         host: smtp.example.com:25
     adminUser: project-admin
-    adminPassword: project-2024
+    adminPassword: project-2025
     sidecar:
       datasources:
         enabled: false
@@ -27,7 +27,7 @@ kube-prometheus-stack:
       enabled: false
       existingClaim: ebs-claim
     ingress:
-      enabled: true
+      enabled: false
       hosts:
         - grafana.lowsandbox.com
       ingressClassName: nginx
