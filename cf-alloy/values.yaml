@@ -3,7 +3,7 @@ cf-alloy:
 
 alloy:
   image:
-    tag: "v1.5.1"
+    tag: "v1.12.1"
   alloy:
     mounts:
       # -- Mount /var/log from the host into the container for log collection.
