@@ -4,7 +4,7 @@ kubernetes-ingress:
   controller:
     image:
       repository: haproxytech/kubernetes-ingress
-      tag: v1.46.1
+      tag: 1.46.1
     kind: Deployment # consider using DaemonSet for better performance
     ingressClassName: haproxy
     logging:
