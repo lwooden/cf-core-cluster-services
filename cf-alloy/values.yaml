@@ -16,7 +16,7 @@ alloy:
       content: |-
         loki.write "default" {
           endpoint {
-            url = "http://loki-headless/loki/api/v1/push"
+            url = "http://loki-gateway/loki/api/v1/push"
           }
         }
 
