@@ -24,25 +24,27 @@ loki:
     extraVolumes:
       - name: temporary
         emptyDir: {}
-  loki:
-    # useTestSchema: true
-    auth_enabled: false
-    commonConfig:
-      replication_factor: 1
+
+  # useTestSchema: true
+  auth_enabled: false
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: "filesystem"
+  rulerConfig:
     storage:
-      type: "filesystem"
-    rulerConfig:
-      storage:
-        type: local
-    schemaConfig:
-      configs:
-        - from: "2024-01-01"
-          store: tsdb
-          index:
-            prefix: loki_index_
-            period: 24h
-          object_store: filesystem # we're storing on filesystem so there's no real persistence here.
-          schema: v13
+      type: local
+  schemaConfig:
+    configs:
+      - from: "2024-01-01"
+        store: tsdb
+        index:
+          prefix: loki_index_
+          period: 24h
+        object_store: filesystem # we're storing on filesystem so there's no real persistence here.
+        schema: v13
+chunksCache:
+  enabled: false
 
 replicaCount: 1
 
