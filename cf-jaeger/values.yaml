@@ -1,0 +1,16 @@
+cf-jaeger:
+  enabled: true
+jaeger:
+  image:
+    repository: jaegertracing/jaeger
+    tag: "2.2.0" # Override the default version
+  ingress:
+    enabled: false # UI config
+    hosts:
+      - <HOST>
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp, jaeger, zipkin]
+        processors: [batch]
+        exporters: [jaeger_storage_exporter]
