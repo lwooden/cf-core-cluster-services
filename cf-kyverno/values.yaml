@@ -4,12 +4,12 @@
 
 cf-kyverno:
   enabled: true
-#kyverno:
-  # admissionController:
-  #   replicas: 1
-  # backgroundController:
-  #   replicas: 1
-  # cleanupController:
-  #   replicas: 1
-  # reportController:
-  #   replicas: 1
+kyverno:
+  admissionController:
+    replicas: 1
+  backgroundController:
+    replicas: 1
+  cleanupController:
+    replicas: 1
+  reportController:
+    replicas: 1
