@@ -1,15 +1,26 @@
 cf-argo-cd:
   enabled: true
-
 argo-cd:
   global:
     domain: argocd.lowsandbox.com
+    image:
+      repository: quay.io/argoproj/argocd
+      tag: ""
+      imagePullPolicy: IfNotPresent
+    extraVolumeMounts:
+      - name: <PLACEHOLDER>
+        mountPath: /var/log
+        subPath: <PLACEHOLDER>
+    extraVolumes:
+      - name: <PLACEHOLDER>
+        secret:
+          secretName: <PLACEHOLDER>
   configs:
     params:
       server.insecure: true
   server:
     ingress:
-      enabled: true
+      enabled: false
       controller: generic
       ingressClassName: nginx
       pathType: Prefix
