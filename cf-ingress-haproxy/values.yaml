@@ -19,6 +19,9 @@ kubernetes-ingress:
         admin: false
         stat: false
       annotations:
-        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+        #        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+        #        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+        service.beta.kubernetes.io/aws-load-balancer-type: "alb"
         service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
-        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:726728011995:certificate/1632b387-345a-4518-a09e-362720af415a
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
