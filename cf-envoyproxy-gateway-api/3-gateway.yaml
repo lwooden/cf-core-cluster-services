@@ -1,0 +1,28 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: external-gateway
+  namespace: gateway
+  annotations:
+spec:
+  gatewayClassName: external-gatewayclass
+  listeners:
+    - name: http
+      port: 80
+      protocol: HTTP
+      allowedRoutes:
+        namespaces:
+          from: All
+    # - name: https
+    #   hostname: "<HOST>"
+    #   port: 443
+    #   protocol: HTTPS
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #       - kind: Secret
+    #         group: ""
+    #         name: "ingress-tls"
+    #         namespace: gateway
