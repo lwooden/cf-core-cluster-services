@@ -1,13 +1,14 @@
 cf-jaeger:
   enabled: true
 jaeger:
+  enabled: true
   image:
     repository: jaegertracing/jaeger
     tag: "2.2.0" # Override the default version
   ingress:
-    enabled: false # UI config
+    enabled: true # UI config
     hosts:
-      - <HOST>
+      - jaeger.lowsansbox.com
   service:
     pipelines:
       traces:
