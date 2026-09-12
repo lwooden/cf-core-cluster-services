@@ -8,6 +8,7 @@ cf-aws-loadbalancer-controller:
 
 
 aws-load-balancer-controller:
+  projectName: lowk8
   replicaCount: 2
 
   revisionHistoryLimit: 10
