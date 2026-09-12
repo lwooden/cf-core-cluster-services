@@ -4,6 +4,8 @@ metadata:
   name: external-gateway
   namespace: gateway
   annotations:
+    gateway.envoyproxy.io/extension-types: "EnvoyProxy"
+    gateway.envoyproxy.io/extension-ref-name: "external-proxy-config"
 spec:
   gatewayClassName: external-gatewayclass
   listeners:
